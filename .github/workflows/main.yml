@@ -4,7 +4,7 @@ on:
     inputs:
       BRANCH:
         description: Kernel branch
-        default: 'android16-6.6'
+        default: 'android15-6.6'
         required: true
 
 jobs:
@@ -59,7 +59,7 @@ jobs:
             make -C $(pwd) O=$(pwd)/out KCFLAGS=-w CONFIG_SECTION_MISMATCH_WARN_ONLY=y -j$(nproc --all)
             cd out/arch/arm64/boot
             wget https://github.com/Uevo001/magiskboot-linux/raw/refs/heads/main/x86_64/magiskboot
-            wget https://gitlab.com/zarakinyu/android_dump_motorola_mumba/-/raw/WWAA36V.48-12-ST12.1/boot.img
+            wget https://gitlab.com/zarakinyu/android_dump_motorola_mumba/-/raw/W1WAA36.48-12-40/boot.img
             chmod +x magiskboot
             ./magiskboot unpack boot.img
             rm kernel
