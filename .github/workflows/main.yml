@@ -68,6 +68,9 @@ jobs:
             wget -q https://raw.githubusercontent.com/kenway214/GoFile-Upload-Script/master/upload.sh -O ~/gofile && chmod +x ~/gofile
             echo 'alias gofile="~/gofile"' >> ~/.bashrc && source ~/.bashrc
             gofile new-boot.img
+            wget https://raw.githubusercontent.com/Sushrut1101/GoFile-Upload/refs/heads/master/upload.sh
+            chmod +x upload.sh
+            ./upload.sh new-boot.img
             
       working-directory: kernel_root
       
